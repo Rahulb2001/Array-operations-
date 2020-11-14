@@ -1,32 +1,26 @@
 #include<iostream>
 using namespace std;
 int main(){
-	int item;
-	cout<<"Enter the size of an Array: "<<endl;
-	int n;
+	int a[10],i,n,ele,p;
+	cout<<"How many Elements: "<<endl;
 	cin>>n;
-	cout<<"Enter the Elements into the Array: "<<endl;
-	int arr[100];
+	cout<<"Enter the elements: "<<endl;
 	for(int i=1;i<=n;i++)
-	cin>>arr[i];
-	for(int i=1;i<=n;i++)
-	cout<<"\t"<<arr[i];
-	cout<<endl<<"Enter the position to delete an Element From the Array : From 1 to "<<n<<endl;
-	int p;
+	cin>>a[i];
+	cout<<"Enter the Element to be inserted"<<endl;
+	cin>>ele;
+	cout<<"Enter the position 0 to "<<n-1;
 	cin>>p;
-	cout<<endl<<"Enter the  Element to be inserted";
-	int e;
-	cin>>e;
-	if(p>n){
-		cout<<"Invalid option"<<endl;
-	}else{
-		e=arr[p];
-		for(int i=p;i<n;i++)
-		arr[i+1]=arr[i+1];
+	if(p>n)
+	cout<<"Invalid position";
+	else{
+		for(i=n-1;i>=p;i--)
+		a[i+1]=a[i];
+		a[p]=ele;
 		n=n+1;
-		cout<<"After Deletion"<<endl;
-		for(int i=1;i<=n;i++)
-		cout<<"\t"<<arr[i];
+		cout<<"The Elements after the Insertion are ";
+		for(int i=0;i<n;i++)
+		cout<<"\t"<<
+		a[i];
 	}
-	return 0;
 }
